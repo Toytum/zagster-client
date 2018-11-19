@@ -3,29 +3,30 @@
     <head>
         <title>Let's give it a try</title> 
         <link rel = "stylesheet" type = "text/css" href = "Main.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="main.js"></script>
     </head>
 <body>
     
-<script
-src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-crossorigin="anonymous"></script>
-<script src="main.js"></script>
-
 <h1>Zagster Bike Share in Bend</h1>
 <h2 id = "rideCount">TODO</h2>
 <p id = "total_rides">Total rides</p>
 
-<span id = "circle1" class = "dot"></span>
+<canvas id="polarChart" width="400" height="400"></canvas>
+
+
+<!--
+<span id = "circle1" class = "dot"></span> 
 <br/>
 <span id = "circle2" class = "dot"></span>
 <br/>
 <span id = "circle3" class = "dot"></span>
 <span id = "circle4" class = "dot"></span>
 <br/>
-<p>Each circle represents a zagster station, and the size of each circle is in proportion with the station's overall use (not currently working)</p>
+<p>Each circle represents a zagster station, and the size of each circle is in proportion with the station's overall use (not currently working)</p> --> 
 
 </body>
-
-
 </html>
