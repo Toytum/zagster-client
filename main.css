@@ -51,3 +51,8 @@ margin: 5px;
     border-radius: 50%;
     display: inline-block;
 }
+
+#graphContainer{
+    width: 50%;
+
+}
