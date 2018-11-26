@@ -5,7 +5,7 @@ var colSimpCount;
 
 function updateView(){
     createGraph();
-    $.getJSON(BASE_URL + "/rides/count/columbia_simpson" , printData)
+    $.getJSON(BASE_URL + "/rides/count/columbia_simpson" , updateColSimpCount)
     $.getJSON(BASE_URL + "/rides/count/drake_park" , printData)
     $.getJSON(BASE_URL + "/rides/count/g5" , printData)
     $.getJSON(BASE_URL + "/rides/count/galveston" , printData)
@@ -20,22 +20,23 @@ function updateRideCount(data){
     $("h2#rideCount").html(numberOfRides)
 }
 
-// function updateColSimpCount(data){
-   // colSimpCount = // ...
+function updateColSimpCount(data){
+
+}
 
 function printData(data){
     console.log(data)
-}
+}   
 
 function createGraph() {
     var ctx = document.getElementById("polarChart");
     var polarChart = new Chart(ctx, {
         type: 'polarArea',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ["Comlumbia Simpson", "Blue", "Yellow", "Green", "Purple", "Orange"],
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [colSimpCount, 9, 3, 5, 2, 3],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
