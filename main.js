@@ -12,7 +12,6 @@ var stationOsuCascades;
 var stationTenBarrel;
 
 function updateView(){
-    createGraph();
   $.when(
     $.getJSON(BASE_URL + "/rides/count/columbia_simpson" , updateColSimpson),
     $.getJSON(BASE_URL + "/rides/count/drake_park" , updateDrakePark),
@@ -54,21 +53,22 @@ function updateTenBarrel(data){
 }
 
 function makeStationGraph() {
-    var ctx = document.getElementById("polarChart");
+    var ctx = document.getElementById("makeStationGraph");
     var polarChart = new Chart(ctx, {
         type: 'polarArea',
         data: {
-            labels: ["Comlumbia Simpson", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ["Comlumbia Simpson", "G5", "Galveston", "GRC", "Old Mill", "OSU Cascades","Ten Barrels"],
             datasets: [{
-                label: '# of Votes',
-                data: [stationColSimpson, 9, 3, 5, 2, 3],
+                label: '# of rides per station',
+                data: [stationColSimpson, stationG5, stationGalveston, stationGrc, stationOldMill, stationOsuCascades, stationTenBarrel],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
                     'rgba(75, 192, 192, 0.2)',
                     'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(125, 119, 34, 0.2)'
                 ],
                 borderColor: [
                     'rgba(255,99,132,1)',
@@ -76,7 +76,8 @@ function makeStationGraph() {
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(125, 119, 34, 0.2)'
                 ],
                 borderWidth: 1
             }]
